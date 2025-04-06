@@ -6,6 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Button } from "@/components/ui/button"
 import { useAuth } from "@/components/auth-provider"
+import { useLanguage } from "@/components/language-provider"
 import { PortfolioChart } from "@/components/portfolio-chart"
 import { AssetList } from "@/components/asset-list"
 import { RecentActivity } from "@/components/recent-activity"
@@ -15,6 +16,7 @@ import { Wallet, ArrowUpRight, ArrowDownRight, TrendingUp, Coins, ImageIcon, Use
 
 export default function DashboardPage() {
   const { user } = useAuth()
+  const { t } = useLanguage()
   const [timeframe, setTimeframe] = useState("1W")
   const [selectedNetwork, setSelectedNetwork] = useState("ethereum")
   const [isWalletConnected, setIsWalletConnected] = useState(false)
@@ -45,8 +47,8 @@ export default function DashboardPage() {
     <div className="flex-1 space-y-6">
       <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
-          <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
-          <p className="text-muted-foreground">Welcome back, {user?.name || "User"}</p>
+          <h2 className="text-3xl font-bold tracking-tight">{t("nav.dashboard")}</h2>
+          <p className="text-muted-foreground">{t("hero.subtitle")}</p>
         </div>
         <div className="flex items-center gap-2">
           <NetworkSelector onNetworkChange={handleNetworkChange} currentNetwork={selectedNetwork} />

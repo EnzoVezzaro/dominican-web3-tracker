@@ -13,22 +13,22 @@ export function DashboardNav() {
   const routes = [
     {
       href: "/dashboard",
-      label: "Dashboard",
+      label: t("nav.dashboard"),
       icon: <LayoutDashboard className="mr-2 h-4 w-4" />,
     },
     {
       href: "/dashboard/coins",
-      label: "Coins",
+      label: t("features.coins.title"),
       icon: <Coins className="mr-2 h-4 w-4" />,
     },
     {
       href: "/dashboard/nfts",
-      label: "NFTs",
+      label: t("features.nft.title"),
       icon: <ImageIcon className="mr-2 h-4 w-4" />,
     },
     {
       href: "/dashboard/community",
-      label: "Community",
+      label: t("features.community.title"),
       icon: <Users className="mr-2 h-4 w-4" />,
     },
     {
@@ -38,7 +38,7 @@ export function DashboardNav() {
     },
     {
       href: "/dashboard/education",
-      label: "Education",
+      label: t("nav.education"),
       icon: <BookOpen className="mr-2 h-4 w-4" />,
     },
     {
